@@ -170,8 +170,7 @@ def display_data(df):
     
     print('\nDisplay Data...\n')
     
-    lower_bound=0
-    upper_bound=5
+    lower_bound=0; upper_bound=5
     
     while True:
         raw = input('\nWould you like to view 5 (more) lines of raw bikeshare data? Enter yes or no.\n')
@@ -179,8 +178,7 @@ def display_data(df):
             break
         else:
             print(df[df.columns[0:]].iloc[lower_bound:upper_bound])
-            lower_bound += 5
-            upper_bound += 5
+            lower_bound += 5; upper_bound += 5
         
 
 def main():
