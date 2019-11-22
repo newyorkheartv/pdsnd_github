@@ -33,3 +33,4 @@ For the idea to add a Contributing section:
 
 ### Update Log
 Preliminary Edit - 11/17/2019
+Completion of README - 11/17/2019
