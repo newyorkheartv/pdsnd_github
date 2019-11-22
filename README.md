@@ -36,3 +36,4 @@ Preliminary Edit - 11/17/2019
 Completion of README - 11/17/2019
 Formatting and Touch Up - 11/18/2019
 Markdown changes - 11/18/2019
+Adjusted Wording in Credits - 11/18/2019
