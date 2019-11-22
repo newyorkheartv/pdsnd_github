@@ -27,7 +27,6 @@ def get_filters():
             break
         else:
             print('Your input does not match a city the database has data for.  Please revise.')
-
     
     while True:
         month = input('Select a month to be analyzed, or say \'all\' to apply no month filter: \n').lower()
@@ -35,7 +34,6 @@ def get_filters():
             break
         else:
             print('Your input does not match a month the database has data for.  Please revise.')
-
     
     while True:
         day = input('Select a day of the week to be analyzed, or say \'all\' to apply no day of the week filter: \n').lower()
@@ -83,15 +81,12 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-
     
     most_common_month = df['month'].value_counts().idxmax()
     print('The most common month is: ', most_common_month)
-
    
     most_common_day_of_week = df['day_of_week'].value_counts().idxmax()
     print('The most common day of the week is: ', most_common_day_of_week)
-
     
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
@@ -107,20 +102,16 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-
     
     most_common_start_station = df['Start Station'].value_counts().idxmax()
     print('The most commonly used start station is: ', most_common_start_station)
-
     
     most_common_end_station = df['End Station'].value_counts().idxmax()
     print('The most commonly used end station is: ', most_common_end_station)
-
     
     df['Start End'] = df['Start Station'].map(str) + '  &  ' + df['End Station']
     most_frequent_trip = df['Start End'].value_counts().idxmax()
     print('The most frequent combination of start station and end station trip is: ', most_frequent_trip)
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -131,11 +122,9 @@ def trip_duration_stats(df):
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
-
     
     total_time = df['Trip Duration'].sum()
     print('Total travel time is: ', total_time)
-
    
     mean_time = df['Trip Duration'].mean()
     print('Mean travel time is: ', mean_time)
@@ -149,18 +138,15 @@ def user_stats(df):
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
-
     
     user_types = df['User Type'].value_counts().to_frame()
     print('A count of user types: ', user_types)
-
    
     try:
         gender_counts = df['Gender'].value_counts().to_frame()
         print('A count of user gender: ', gender_counts)
     except:
         print('There is no gender data for this city.')
-
     
     try:
         birth_year = df['Birth Year']
