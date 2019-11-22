@@ -108,8 +108,8 @@ def station_stats(df):
     most_common_end_station = df['End Station'].value_counts().idxmax()
     print('The most commonly used end station is: ', most_common_end_station)
     
-    df['Start End'] = df['Start Station'].map(str) + '  &  ' + df['End Station']
-    most_frequent_trip = df['Start End'].value_counts().idxmax()
+    df['StartEnd'] = df['Start Station'].map(str) + '  &  ' + df['End Station']
+    most_frequent_trip = df['StartEnd'].value_counts().idxmax()
     print('The most frequent combination of start station and end station trip is: ', most_frequent_trip)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
